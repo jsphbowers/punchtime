@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet'
+    integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD' crossorigin='anonymous'>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@mdi/font@7.1.96/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Punch Time</title>
+
+  <style>
+    body.debug .container,
+    body.debug .container-fluid {
+      outline: 2px double blue;
+      outline-offset: -2px;
+    }
+
+    body.debug .row {
+      outline: 2px dashed red;
+      outline-offset: -2px;
+    }
+
+    body.debug [class*="col-"] {
+      outline: 2px dotted forestgreen;
+      outline-offset: -3px;
+    }
+  </style>
+
+</head>
+
+<body class="debug">
+
+  <header class="section">
+    <section class="row">
+      <div class="col-12">
+        <h1>Punch Time!</h1>
+      </div>
+    </section>
+  </header>
+
+  <main class="section">
+    <!-- SECTION Main enemy/thing to click on -->
+    <section class="row">
+      <div class="col-12">
+        <div>Progress Bar</div>
+      </div>
+      <div class="col-12">
+        <img onclick="punch()" src="https://media.tenor.com/OOORv2yt2I8AAAAM/boxing-game.gif" alt="King Hippo Gif">
+      </div>
+    </section>
+
+    <!-- SECTION Little mac part (mostly for show) -->
+    <section class="row">
+      <div class="col-12">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS66QM262DnYKGfoTu84cPtaxcmT21MqlR_Zg&usqp=CAU"
+          alt="Little Mac">
+      </div>
+    </section>
+  </main>
+
+  <!-- SECTION Bottom of screen with stats -->
+  <footer class="section-fluid">
+
+    <!-- STUB All totals -->
+    <section class="row">
+      <div class="col-12 d-flex justify-content-center" id="scoreboard">
+        <div class="m-2">Power: </div>
+        <div class="m-2" id="total">Total Punches: </div>
+      </div>
+    </section>
+
+    <!-- STUB upgrades -->
+    <section class="row">
+      <div class="col-6">
+        <h3>Upgrades</h3>
+        <button class="btn btn-rounded btn-primary">Fancy Footwork +1</button>
+        <button class="btn btn-rounded btn-primary">Heavier Gloves +1</button>
+      </div>
+      <div class="col-6">
+        <h3>Automatic Upgrades</h3>
+        <button class="btn btn-rounded btn-primary">Taunting +10 punches / 3 sec</button>
+        <button class="btn btn-rounded btn-primary">Paid the Ref +20 punches / 5 sec</button>
+      </div>
+
+    </section>
+  </footer>
+
+
+
+  <script src="app.js"></script>
+</body>
+
+</html>
