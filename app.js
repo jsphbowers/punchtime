@@ -67,10 +67,10 @@ function updateTotalPunches() {
 }
 
 function updateTotalPower() {
-  let powerAdded = 0
+  totalPower = 0
   upgrades.forEach(u => totalPower += u.quantity * u.multiplier * u.power)
 
-  console.log(powerAdded)
+  console.log(totalPower)
   let totalPowerElem = document.getElementById("power")
   totalPowerElem.innerHTML = `<p>
 Power: ${totalPower}</p>
@@ -78,9 +78,8 @@ Power: ${totalPower}</p>
 }
 
 function updateTotalAutoPower() {
-  let powerAdded = 0
-  automaticUpgrades.forEach(u => totalAutoPower += u.quantity * u.multiplier * u.power)
-
+  totalAutoPower = 0
+  automaticUpgrades.forEach(u => totalAutoPower += u.quantity * u.power)
 
   let totalPowerElem = document.getElementById("autopower")
   totalPowerElem.innerHTML = `<p>
