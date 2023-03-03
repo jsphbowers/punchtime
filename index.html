@@ -68,22 +68,37 @@
     <!-- STUB All totals -->
     <section class="row">
       <div class="col-12 d-flex justify-content-center" id="scoreboard">
-        <div class="m-2">Power: </div>
-        <div class="m-2" id="total">Total Punches: </div>
+        <div class="m-2" id="power">Power: 1 </div>
+        <div class="m-2">Auto Power: 0</div>
+        <div class="m-2" id="total">Total Punches: 0 </div>
       </div>
     </section>
 
     <!-- STUB upgrades -->
     <section class="row">
       <div class="col-6">
-        <h3>Upgrades</h3>
-        <button class="btn btn-rounded btn-primary">Fancy Footwork +1</button>
-        <button class="btn btn-rounded btn-primary">Heavier Gloves +1</button>
+        <h3>Buy Upgrades:</h3>
+        <p>Cost: <span id="fancy-footworkcost">50</span> Punches</p>
+        <button class="btn btn-rounded btn-primary" onclick="buyUpgrade('fancy-footwork')">Fancy Footwork +1</button>
+        <p class="pt-3">Cost: <span id="heavier-glovescost">20</span> Punches</p>
+        <button class="btn btn-rounded btn-primary" onclick="buyUpgrade('heavier-gloves')">Heavier Gloves +1</button>
       </div>
       <div class="col-6">
-        <h3>Automatic Upgrades</h3>
-        <button class="btn btn-rounded btn-primary">Taunting +10 punches / 3 sec</button>
-        <button class="btn btn-rounded btn-primary">Paid the Ref +20 punches / 5 sec</button>
+        <h3>Buy Automatic Upgrades:</h3>
+        <p>Cost: <span id="tauntingcost">100</span> Punches</p>
+        <button class="btn btn-rounded btn-primary" onclick="buyAutoUpgrade('taunting')">Taunting +10 punches / 3
+          sec</button>
+        <p class="pt-3">Cost: <span id="Paid-the-refcost">500</span> Punches</p>
+        <button class="btn btn-rounded btn-primary" onclick="buyAutoUpgrade('Paid-the-ref')">Paid the Ref +20 punches /
+          5
+          sec</button>
+      </div>
+      <div class="col-12" id="currentUpgrades">
+        <h4>Little Mac's Upgrades:</h4>
+        <p>Fancy Footwork: <span id="fancy-footworkupgrade">0</span></p>
+        <p>Heavy Gloves: <span id="heavier-glovesupgrade">0</span></p>
+        <p>Taunting: <span id="tauntingupgrade">0</span></p>
+        <p>Paid the Ref: <span id="Paid-the-refupgrade">0</span></p>
       </div>
 
     </section>
