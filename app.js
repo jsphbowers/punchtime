@@ -20,13 +20,15 @@ let automaticUpgrades = [
     name: "taunting",
     price: 100,
     quantity: 0,
-    multiplier: 1
+    multiplier: 1,
+    power: 10
   },
   {
     name: "Paid-the-ref",
     price: 500,
     quantity: 0,
-    multiplier: 1
+    multiplier: 1,
+    power: 50
   }
 ]
 
@@ -53,6 +55,10 @@ function punch() {
   updateTotalPunches()
 }
 
+function autoPunch() {
+  let punch = 0
+}
+
 function updateTotalPunches() {
   let totalElem = document.getElementById("total")
   totalElem.innerHTML = `<p>
@@ -73,17 +79,26 @@ Power: ${totalPower}</p>
 
 function updateTotalAutoPower() {
   let powerAdded = 0
-  upgrades.forEach(u => totalAutoPower += u.quantity * u.multiplier * u.power)
+  automaticUpgrades.forEach(u => totalAutoPower += u.quantity * u.multiplier * u.power)
 
-  console.log(powerAdded)
-  let totalPowerElem = document.getElementById("power")
+
+  let totalPowerElem = document.getElementById("autopower")
   totalPowerElem.innerHTML = `<p>
-Power: ${totalPower}</p>
+Auto Power: ${totalAutoPower}</p>
 `
 }
 
 function updateUpgrades(name) {
   let increaseUpgradeQuantity = upgrades.find(u => u.name == name)
+  let upgradesElem = document.getElementById(name + 'upgrade')
+  upgradesElem.innerText = `${increaseUpgradeQuantity.quantity}`
+  console.log(increaseUpgradeQuantity)
+  let costElem = document.getElementById(name + 'cost')
+  costElem.innerText = `${increaseUpgradeQuantity.price}`
+}
+
+function updateAutoUpgrades(name) {
+  let increaseUpgradeQuantity = automaticUpgrades.find(u => u.name == name)
   let upgradesElem = document.getElementById(name + 'upgrade')
   upgradesElem.innerText = `${increaseUpgradeQuantity.quantity}`
   console.log(increaseUpgradeQuantity)
@@ -111,8 +126,38 @@ function buyAutoUpgrade(name) {
     increaseAutoUpgrade.quantity++
     totalPunches -= increaseAutoUpgrade.price
     increaseAutoUpgrade.price = increaseAutoUpgrade.price * 2
-    updateUpgrades(name)
-    updateTotalPower()
+    updateAutoUpgrades(name)
+    updateTotalAutoPower()
     updateTotalPunches()
   }
+
 }
+
+let autoUpgradeInterval = setInterval(() => {
+  let totalPunch = 0;
+  automaticUpgrades.forEach(au => {
+    totalPunch += au.power * au.quantity
+  })
+  console.log('Automatic punches be like', totalPunch);
+  totalPunches += totalPunch;
+  updateTotalPunches()
+
+}, 3000)
+// function checkTaunting(name) {
+//   let runTaunting = automaticUpgrades.find(au => au.name == name)
+
+//   if (runTaunting.quantity >= 1) {
+//     setInterval(taunting, 3000)
+//   }
+// }
+
+// function taunting() {
+//   let tauntingTotal = automaticUpgrades.find(au => au.name == "taunting")
+//   totalPunches += tauntingTotal.power * tauntingTotal.quantity
+//   updateTotalPunches()
+// }
+
+// function paidTheRef() {
+//   totalPunches += 50
+//   updateTotalPunches
+// }

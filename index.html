@@ -69,7 +69,7 @@
     <section class="row">
       <div class="col-12 d-flex justify-content-center" id="scoreboard">
         <div class="m-2" id="power">Power: 1 </div>
-        <div class="m-2">Auto Power: 0</div>
+        <div class="m-2" id="autopower">Auto Power: 0</div>
         <div class="m-2" id="total">Total Punches: 0 </div>
       </div>
     </section>
@@ -89,9 +89,8 @@
         <button class="btn btn-rounded btn-primary" onclick="buyAutoUpgrade('taunting')">Taunting +10 punches / 3
           sec</button>
         <p class="pt-3">Cost: <span id="Paid-the-refcost">500</span> Punches</p>
-        <button class="btn btn-rounded btn-primary" onclick="buyAutoUpgrade('Paid-the-ref')">Paid the Ref +20 punches /
-          5
-          sec</button>
+        <button class="btn btn-rounded btn-primary" onclick="buyAutoUpgrade('Paid-the-ref')">Paid the Ref +50 punches /
+          3 sec</button>
       </div>
       <div class="col-12" id="currentUpgrades">
         <h4>Little Mac's Upgrades:</h4>
