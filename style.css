@@ -1,0 +1,32 @@
+.title {
+  padding-left: 10%;
+}
+
+.title-text {
+  color: rgb(253 126 1);
+
+}
+
+.glove {
+  color: rgb(9 235 9);
+}
+
+.arena {
+  background-image: url("https://img.theepochtimes.com/assets/uploads/2014/05/super-smash-boxing-ring.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.photo {
+  display: flex;
+  justify-content: center;
+
+}
+
+.mac-photo {
+  display: flex;
+  justify-content: center;
+  height: 20vh;
+  width: auto;
+  background-color: rgba(31, 31, 222, 0.401);
+}
