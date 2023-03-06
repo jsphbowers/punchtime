@@ -32,24 +32,21 @@
 
 </head>
 
-<body class="debug bg-dark text-light">
+<body class="bg-dark text-light">
 
-  <header class="section">
+  <header class="container-fluid">
     <section class="row">
       <div class="col-12">
-        <h1 class="title"><i class="mdi glove mdi-boxing-glove"></i> <span class="title-text">Punch Time!</span> <i
-            class="mdi glove mdi-boxing-glove"></i>
+        <h1 class="title"><i class="mdi glove mdi-boxing-glove"></i> <span class="title-text">Punch
+            Time!</span> <i class="mdi glove mdi-boxing-glove"></i>
         </h1>
       </div>
     </section>
   </header>
 
-  <main class="section arena">
+  <main class="container-fluid arena">
     <!-- SECTION Main enemy/thing to click on -->
     <section class="row">
-      <div class="col-12">
-        <div>Progress Bar</div>
-      </div>
       <div class="col-12 photo">
         <img class="big-baddie" onclick="punch()" src="https://media.tenor.com/OOORv2yt2I8AAAAM/boxing-game.gif"
           alt="King Hippo Gif">
@@ -66,11 +63,11 @@
   </main>
 
   <!-- SECTION Bottom of screen with stats -->
-  <footer class="section-fluid">
+  <footer class="container-fluid">
 
     <!-- STUB All totals -->
     <section class="row">
-      <div class="col-12 d-flex justify-content-center" id="scoreboard">
+      <div class="col-12 scoreboard d-flex justify-content-center" id="scoreboard">
         <div class="m-2" id="power">Power: 1 </div>
         <div class="m-2" id="autopower">Auto Power: 0</div>
         <div class="m-2" id="total">Total Punches: 0 </div>
@@ -78,15 +75,17 @@
     </section>
 
     <!-- STUB upgrades -->
-    <section class="row">
-      <div class="col-6">
+    <section class="row p-3">
+      <div class="col-6 upgrades">
         <h3>Buy Upgrades:</h3>
         <p>Cost: <span id="fancy-footworkcost">50</span> Punches</p>
-        <button class="btn btn-rounded btn-primary" onclick="buyUpgrade('fancy-footwork')">Fancy Footwork +1</button>
+        <button class="btn btn-rounded btn-primary" onclick="buyUpgrade('fancy-footwork')">Fancy Footwork +10
+          power</button>
         <p class="pt-3">Cost: <span id="heavier-glovescost">20</span> Punches</p>
-        <button class="btn btn-rounded btn-primary" onclick="buyUpgrade('heavier-gloves')">Heavier Gloves +1</button>
+        <button class="btn btn-rounded btn-primary" onclick="buyUpgrade('heavier-gloves')">Heavier Gloves +5
+          power</button>
       </div>
-      <div class="col-6">
+      <div class="col-6 upgrades">
         <h3>Buy Automatic Upgrades:</h3>
         <p>Cost: <span id="tauntingcost">100</span> Punches</p>
         <button class="btn btn-rounded btn-primary" onclick="buyAutoUpgrade('taunting')">Taunting +10 punches / 3
@@ -95,14 +94,13 @@
         <button class="btn btn-rounded btn-primary" onclick="buyAutoUpgrade('Paid-the-ref')">Paid the Ref +50 punches /
           3 sec</button>
       </div>
-      <div class="col-12" id="currentUpgrades">
+      <div class="col-12 current" id="currentUpgrades">
         <h4>Little Mac's Upgrades:</h4>
         <p>Fancy Footwork: <span id="fancy-footworkupgrade">0</span></p>
         <p>Heavy Gloves: <span id="heavier-glovesupgrade">0</span></p>
         <p>Taunting: <span id="tauntingupgrade">0</span></p>
         <p>Paid the Ref: <span id="Paid-the-refupgrade">0</span></p>
       </div>
-
     </section>
   </footer>
 

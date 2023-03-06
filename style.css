@@ -4,7 +4,10 @@
 
 .title-text {
   color: rgb(253 126 1);
-
+  border: 2px solid rgb(253 126 1);
+  border-radius: 5%;
+  margin: 5px;
+  padding: 2px;
 }
 
 .glove {
@@ -13,14 +16,14 @@
 
 .arena {
   background-image: url("https://img.theepochtimes.com/assets/uploads/2014/05/super-smash-boxing-ring.jpg");
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
 }
 
 .photo {
   display: flex;
   justify-content: center;
-
+  padding-top: 1em;
 }
 
 .mac-photo {
@@ -28,5 +31,25 @@
   justify-content: center;
   height: 20vh;
   width: auto;
-  background-color: rgba(31, 31, 222, 0.401);
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.scoreboard {
+  padding: 4px;
+  border: 5px solid rgba(189, 25, 25, 0.788);
+  border-radius: 2em;
+}
+
+.upgrades {
+  border: 3px solid rgba(9, 235, 9, 0.737);
+  border-radius: 2em;
+  padding: 2em;
+}
+
+.current {
+  border: 3px solid rgba(189, 25, 25, 0.788);
+  border-radius: 2em;
+  padding: 2em;
+  margin: 10px;
 }

@@ -60,6 +60,9 @@ function autoPunch() {
 }
 
 function updateTotalPunches() {
+  if (totalPunches > 10000) {
+    window.alert("KNOCKOUT!!! YOU WIN")
+  }
   let totalElem = document.getElementById("total")
   totalElem.innerHTML = `<p>
   Total Punches: ${totalPunches}</p>
@@ -73,7 +76,7 @@ function updateTotalPower() {
   console.log(totalPower)
   let totalPowerElem = document.getElementById("power")
   totalPowerElem.innerHTML = `<p>
-Power: ${totalPower}</p>
+Power: ${totalPower + 1}</p>
 `
 }
 
@@ -142,6 +145,8 @@ let autoUpgradeInterval = setInterval(() => {
   updateTotalPunches()
 
 }, 3000)
+
+
 // function checkTaunting(name) {
 //   let runTaunting = automaticUpgrades.find(au => au.name == name)
 
