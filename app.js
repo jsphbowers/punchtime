@@ -43,6 +43,7 @@ let boss = {
 let totalPunches = 0
 let totalPower = 0
 let totalAutoPower = 0
+let allTimePunches = 0
 
 
 // SECTION Functions
@@ -52,6 +53,7 @@ function punch() {
   punch += totalPower
   punch += boss.worth
   totalPunches += punch
+  allTimePunches += punch
   updateTotalPunches()
 }
 
@@ -66,6 +68,10 @@ function updateTotalPunches() {
   let totalElem = document.getElementById("total")
   totalElem.innerHTML = `<p>
   Total Punches: ${totalPunches}</p>
+  `
+  let grandTotalElem = document.getElementById("all-time")
+  grandTotalElem.innerHTML = `<p>
+  All Time Punches: ${allTimePunches}</p>
   `
 }
 
