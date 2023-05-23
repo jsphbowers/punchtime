@@ -1,7 +1,7 @@
 let upgrades = [
   {
     name: "fancy-footwork",
-    price: 50,
+    price: 5,
     quantity: 0,
     multiplier: 1,
     power: 10
@@ -99,7 +99,8 @@ Auto Power: ${totalAutoPower}</p>
 function updateUpgrades(name) {
   let increaseUpgradeQuantity = upgrades.find(u => u.name == name)
   let upgradesElem = document.getElementById(name + 'upgrade')
-  upgradesElem.innerText = `${increaseUpgradeQuantity.quantity}`
+  upgradesElem.insertAdjacentHTML("beforebegin", `<img src="https://opengameart.org/sites/default/files/styles/medium/public/sneaks.jpg"
+  alt="sneakers">`)
   console.log(increaseUpgradeQuantity)
   let costElem = document.getElementById(name + 'cost')
   costElem.innerText = `${increaseUpgradeQuantity.price}`
